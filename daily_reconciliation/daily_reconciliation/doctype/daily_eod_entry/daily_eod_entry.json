@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-09 12:00:22.904431",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "warehouse",
+  "closing_stock_count",
+  "closing_petty_cash",
+  "closing_main_cash",
+  "closing_walk_in_count",
+  "column_break_erwb",
+  "stock_variance",
+  "main_cash_variance",
+  "petty_cash_variance",
+  "walk_in_variance",
+  "control_and_approval_fields_section",
+  "allow_override",
+  "approved_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "closing_stock_count",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Closing Stock Count",
+   "reqd": 1
+  },
+  {
+   "fieldname": "closing_petty_cash",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Closing Petty Cash",
+   "reqd": 1
+  },
+  {
+   "fieldname": "closing_main_cash",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Closing Main Cash",
+   "reqd": 1
+  },
+  {
+   "fieldname": "closing_walk_in_count",
+   "fieldtype": "Int",
+   "label": "Closing Walk in Count",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_erwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_variance",
+   "fieldtype": "Float",
+   "label": "Stock Variance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "main_cash_variance",
+   "fieldtype": "Currency",
+   "label": "Main Cash Variance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "petty_cash_variance",
+   "fieldtype": "Currency",
+   "label": "Petty Cash Variance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "walk_in_variance",
+   "fieldtype": "Int",
+   "label": "Walk in Variance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "control_and_approval_fields_section",
+   "fieldtype": "Section Break",
+   "label": "Control And Approval Fields"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_override",
+   "fieldtype": "Check",
+   "label": "Allow Override"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-09 12:19:51.600770",
+ "modified_by": "Administrator",
+ "module": "daily_reconciliation",
+ "name": "Daily EOD Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -5,6 +5,26 @@ app_description = "BOD-EOD Manager"
 app_email = "sukeshanee@gmail.com"
 app_license = "mit"
 
+
+doc_events = {
+    "POS Invoice": {
+        "validate": "daily_reconciliation.api.validate_bod_before_pos"
+    }
+}
+
+scheduler_events = {
+    "cron": {
+        "10 18 * * *": [
+            "daily_reconciliation.api.send_eod_reminder"
+        ]
+    }
+}
+
+doctype_js = {
+    "POS Invoice": "public/js/pos_bod_check.js"
+}
+
+
 # Apps
 # ------------------
 
