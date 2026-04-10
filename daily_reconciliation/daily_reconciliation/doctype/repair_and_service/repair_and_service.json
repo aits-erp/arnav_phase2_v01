@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-10 17:46:41.086425",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_shut",
+  "amended_from",
+  "repair_receipt_no",
+  "date",
+  "name1",
+  "phone",
+  "address",
+  "invoice_reference",
+  "branch",
+  "designation",
+  "designation_1",
+  "expected_return_date",
+  "vendor",
+  "vendor_charges",
+  "column_break_kpxx",
+  "product_name",
+  "sku_code",
+  "metal_type",
+  "purity",
+  "gross_weight",
+  "net_weight",
+  "stone_details",
+  "condition_description",
+  "problem_description",
+  "images"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_shut",
+   "fieldtype": "Section Break",
+   "label": "Repair Receipt Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Repair and Service",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "repair_receipt_no",
+   "fieldtype": "Data",
+   "label": "Repair Receipt No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Link",
+   "label": "Phone",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "invoice_reference",
+   "fieldtype": "Link",
+   "label": "Invoice Reference",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Select",
+   "label": "Designation",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "designation_1",
+   "fieldtype": "Select",
+   "label": "Designation 1",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "expected_return_date",
+   "fieldtype": "Date",
+   "label": "Expected Return Date"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "label": "Vendor",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "vendor_charges",
+   "fieldtype": "Currency",
+   "label": "Vendor Charges"
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "label": "Product Name"
+  },
+  {
+   "fieldname": "sku_code",
+   "fieldtype": "Data",
+   "label": "SKU Code"
+  },
+  {
+   "fieldname": "metal_type",
+   "fieldtype": "Select",
+   "label": "Metal Type",
+   "options": "Gold\nSilver\nPlatinum"
+  },
+  {
+   "fieldname": "purity",
+   "fieldtype": "Select",
+   "label": "Purity",
+   "options": "18K\n22K\n24K"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "net_weight",
+   "fieldtype": "Float",
+   "label": "Net Weight"
+  },
+  {
+   "fieldname": "stone_details",
+   "fieldtype": "Data",
+   "label": "Stone Details"
+  },
+  {
+   "fieldname": "condition_description",
+   "fieldtype": "Small Text",
+   "label": "Condition Description"
+  },
+  {
+   "fieldname": "problem_description",
+   "fieldtype": "Small Text",
+   "label": "Problem Description"
+  },
+  {
+   "fieldname": "column_break_kpxx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Attach",
+   "label": "Images"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-11 00:37:34.149429",
+ "modified_by": "Administrator",
+ "module": "daily_reconciliation",
+ "name": "Repair and Service",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
