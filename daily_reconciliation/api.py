@@ -1,22 +1,24 @@
 import frappe
 from frappe.utils import today
 
-
-# 🔹 POS Restriction: Block POS if BOD not created
 def validate_bod_before_pos(doc, method):
 
-    warehouse = doc.set_warehouse
+    branch = doc.get("branch")  # ✅ correct fieldname from your POS doctype
 
-    if not warehouse:
+    if not branch:
+        frappe.throw("Please set a Branch (Warehouse) on the POS entry before saving.")
         return
 
     bod_exists = frappe.db.exists("Daily BOD Entry", {
-        "date": today(),
-        "warehouse": warehouse
+        "date": today(),       # ✅ correct — your BOD date field is "date"
+        "warehouse": branch    # ✅ correct — your BOD warehouse field is "warehouse"
     })
 
     if not bod_exists:
-        frappe.throw(f"BOD not created for Warehouse {warehouse}. Cannot create POS Entry.")
+        frappe.throw(
+            f"BOD has not been created for Branch '{branch}' today. "
+            f"Please complete the BOD entry first."
+        )
 
 
 # 🔹 EOD Reminder: Send alert at 6:10 PM

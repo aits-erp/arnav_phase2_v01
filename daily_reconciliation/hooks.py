@@ -5,9 +5,8 @@ app_description = "BOD-EOD Manager"
 app_email = "sukeshanee@gmail.com"
 app_license = "mit"
 
-
 doc_events = {
-    "POS Invoice": {
+    "POS": {                   # ✅ your actual doctype name
         "validate": "daily_reconciliation.api.validate_bod_before_pos"
     }
 }
@@ -21,9 +20,8 @@ scheduler_events = {
 }
 
 doctype_js = {
-    "POS Invoice": "public/js/pos_bod_check.js"
+    "POS": "public/js/pos_bod_check.js"   # ✅ updated here too
 }
-
 
 # Apps
 # ------------------
