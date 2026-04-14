@@ -1,25 +1,26 @@
 import frappe
-from frappe.utils import today
+from frappe.utils import today, now_datetime, get_datetime
 
 def validate_bod_before_pos(doc, method):
 
-    branch = doc.get("branch")  # ✅ correct fieldname from your POS doctype
+    branch = doc.get("branch")
 
     if not branch:
-        frappe.throw("Please set a Branch (Warehouse) on the POS entry before saving.")
+        frappe.throw("Please set a Branch before saving.")
         return
 
+    # ✅ BOD date field is a plain Date type so today() works fine for BOD
+    # The issue was only on POS side — BOD.date is Date, so this is correct
     bod_exists = frappe.db.exists("Daily BOD Entry", {
-        "date": today(),       # ✅ correct — your BOD date field is "date"
-        "warehouse": branch    # ✅ correct — your BOD warehouse field is "warehouse"
+        "date": today(),        # ✅ BOD uses Date fieldtype, today() matches correctly
+        "warehouse": branch     # ✅ BOD warehouse field confirmed
     })
 
     if not bod_exists:
         frappe.throw(
             f"BOD has not been created for Branch '{branch}' today. "
-            f"Please complete the BOD entry first."
+            f"Please complete BOD entry first."
         )
-
 
 # 🔹 EOD Reminder: Send alert at 6:10 PM
 def send_eod_reminder():
