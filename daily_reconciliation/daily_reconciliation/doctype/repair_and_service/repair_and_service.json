@@ -5,6 +5,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "entry_type_list_section",
+  "entry_type",
+  "pos_no",
+  "repair_status",
   "section_break_shut",
   "amended_from",
   "repair_receipt_no",
@@ -29,7 +33,9 @@
   "stone_details",
   "condition_description",
   "problem_description",
-  "images"
+  "images",
+  "inward_stock_entry",
+  "outward_stock_entry"
  ],
  "fields": [
   {
@@ -66,9 +72,8 @@
   },
   {
    "fieldname": "phone",
-   "fieldtype": "Link",
-   "label": "Phone",
-   "options": "Customer"
+   "fieldtype": "Data",
+   "label": "Phone"
   },
   {
    "fieldname": "address",
@@ -122,8 +127,9 @@
   },
   {
    "fieldname": "sku_code",
-   "fieldtype": "Data",
-   "label": "SKU Code"
+   "fieldtype": "Link",
+   "label": "SKU Code",
+   "options": "SKU"
   },
   {
    "fieldname": "metal_type",
@@ -170,13 +176,51 @@
    "fieldname": "images",
    "fieldtype": "Attach",
    "label": "Images"
+  },
+  {
+   "fieldname": "entry_type_list_section",
+   "fieldtype": "Section Break",
+   "label": "Entry Type List"
+  },
+  {
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "label": "Entry Type",
+   "options": "Manual\nPOS"
+  },
+  {
+   "depends_on": "eval:doc.entry_type==\"POS\"",
+   "fieldname": "pos_no",
+   "fieldtype": "Link",
+   "label": "POS No",
+   "options": "POS"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "repair_status",
+   "fieldtype": "Select",
+   "label": "Repair Status",
+   "options": "Pending\nIn Progress\nCompleted\nDelivered\nCancelled"
+  },
+  {
+   "fieldname": "inward_stock_entry",
+   "fieldtype": "Link",
+   "label": "Inward Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outward_stock_entry",
+   "fieldtype": "Link",
+   "label": "Outward Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-04-11 00:37:34.149429",
+ "modified": "2026-04-21 17:46:36.497842",
  "modified_by": "Administrator",
  "module": "daily_reconciliation",
  "name": "Repair and Service",
@@ -192,7 +236,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
