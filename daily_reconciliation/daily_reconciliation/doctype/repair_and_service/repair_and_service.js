@@ -352,6 +352,3 @@ frappe.ui.form.on("Repair and Service", {
     }
 
 });
-
-
-
