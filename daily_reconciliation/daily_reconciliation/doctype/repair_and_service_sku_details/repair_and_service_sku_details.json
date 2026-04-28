@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-24 17:01:38.841092",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "repair_and_service_item_section",
+  "product_name",
+  "sku_code",
+  "metal_type",
+  "purity",
+  "gross_weight",
+  "net_weight",
+  "stone_details",
+  "condition_description",
+  "problem_description",
+  "images"
+ ],
+ "fields": [
+  {
+   "fieldname": "repair_and_service_item_section",
+   "fieldtype": "Section Break",
+   "label": "Repair and Service Item"
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "label": "Product Name"
+  },
+  {
+   "fieldname": "sku_code",
+   "fieldtype": "Link",
+   "label": "SKU Code",
+   "options": "SKU"
+  },
+  {
+   "fieldname": "metal_type",
+   "fieldtype": "Select",
+   "label": "Metal Type",
+   "options": "Gold\nSilver\nPlatinum"
+  },
+  {
+   "fieldname": "purity",
+   "fieldtype": "Select",
+   "label": "Purity",
+   "options": "18K\n22K\n24K"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "fieldname": "net_weight",
+   "fieldtype": "Float",
+   "label": "Net Weight"
+  },
+  {
+   "fieldname": "stone_details",
+   "fieldtype": "Data",
+   "label": "Stone Details"
+  },
+  {
+   "fieldname": "condition_description",
+   "fieldtype": "Small Text",
+   "label": "Condition Description"
+  },
+  {
+   "fieldname": "problem_description",
+   "fieldtype": "Small Text",
+   "label": "Problem Description"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Attach",
+   "label": "Images"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-24 17:28:04.715283",
+ "modified_by": "Administrator",
+ "module": "daily_reconciliation",
+ "name": "Repair and Service SKU details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

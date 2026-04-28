@@ -18,22 +18,14 @@
   "address",
   "invoice_reference",
   "branch",
-  "designation",
+
+  "custom_repair_and_service_sku_details",
+
   "designation_1",
   "expected_return_date",
   "vendor",
   "vendor_charges",
   "column_break_kpxx",
-  "product_name",
-  "sku_code",
-  "metal_type",
-  "purity",
-  "gross_weight",
-  "net_weight",
-  "stone_details",
-  "condition_description",
-  "problem_description",
-  "images",
   "inward_stock_entry",
   "outward_stock_entry"
  ],
@@ -92,16 +84,18 @@
    "label": "Branch",
    "options": "Warehouse"
   },
+
   {
-   "fieldname": "designation",
-   "fieldtype": "Select",
-   "label": "Designation",
-   "options": "Low\nMedium\nHigh"
+   "fieldname": "custom_repair_and_service_sku_details",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Repair and Service SKU details"
   },
+
   {
    "fieldname": "designation_1",
    "fieldtype": "Select",
-   "label": "Designation 1",
+   "label": "Designation ",
    "options": "Low\nMedium\nHigh"
   },
   {
@@ -121,61 +115,8 @@
    "label": "Vendor Charges"
   },
   {
-   "fieldname": "product_name",
-   "fieldtype": "Data",
-   "label": "Product Name"
-  },
-  {
-   "fieldname": "sku_code",
-   "fieldtype": "Link",
-   "label": "SKU Code",
-   "options": "SKU"
-  },
-  {
-   "fieldname": "metal_type",
-   "fieldtype": "Select",
-   "label": "Metal Type",
-   "options": "Gold\nSilver\nPlatinum"
-  },
-  {
-   "fieldname": "purity",
-   "fieldtype": "Select",
-   "label": "Purity",
-   "options": "18K\n22K\n24K"
-  },
-  {
-   "fieldname": "gross_weight",
-   "fieldtype": "Float",
-   "label": "Gross Weight"
-  },
-  {
-   "fieldname": "net_weight",
-   "fieldtype": "Float",
-   "label": "Net Weight"
-  },
-  {
-   "fieldname": "stone_details",
-   "fieldtype": "Data",
-   "label": "Stone Details"
-  },
-  {
-   "fieldname": "condition_description",
-   "fieldtype": "Small Text",
-   "label": "Condition Description"
-  },
-  {
-   "fieldname": "problem_description",
-   "fieldtype": "Small Text",
-   "label": "Problem Description"
-  },
-  {
    "fieldname": "column_break_kpxx",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "images",
-   "fieldtype": "Attach",
-   "label": "Images"
   },
   {
    "fieldname": "entry_type_list_section",
@@ -220,7 +161,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-21 17:46:36.497842",
+ "modified": "2026-04-24 17:42:20.359017",
  "modified_by": "Administrator",
  "module": "daily_reconciliation",
  "name": "Repair and Service",
