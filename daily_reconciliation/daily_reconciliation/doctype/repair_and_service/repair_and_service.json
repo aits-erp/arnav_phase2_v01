@@ -17,17 +17,17 @@
   "phone",
   "address",
   "invoice_reference",
+  "column_break_kpxx",
   "branch",
-
-  "custom_repair_and_service_sku_details",
-
   "designation_1",
   "expected_return_date",
   "vendor",
   "vendor_charges",
-  "column_break_kpxx",
+  "mode_of_payment",
+  "paid_amount",
   "inward_stock_entry",
-  "outward_stock_entry"
+  "outward_stock_entry",
+  "custom_repair_and_service_sku_details"
  ],
  "fields": [
   {
@@ -79,23 +79,19 @@
    "options": "Sales Invoice"
   },
   {
+   "fieldname": "column_break_kpxx",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "branch",
    "fieldtype": "Link",
    "label": "Branch",
    "options": "Warehouse"
   },
-
-  {
-   "fieldname": "custom_repair_and_service_sku_details",
-   "fieldtype": "Table",
-   "label": "Items",
-   "options": "Repair and Service SKU details"
-  },
-
   {
    "fieldname": "designation_1",
    "fieldtype": "Select",
-   "label": "Designation ",
+   "label": "Designation",
    "options": "Low\nMedium\nHigh"
   },
   {
@@ -115,8 +111,24 @@
    "label": "Vendor Charges"
   },
   {
-   "fieldname": "column_break_kpxx",
-   "fieldtype": "Column Break"
+   "fieldname": "inward_stock_entry",
+   "fieldtype": "Link",
+   "label": "Inward Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outward_stock_entry",
+   "fieldtype": "Link",
+   "label": "Outward Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "custom_repair_and_service_sku_details",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Repair and Service SKU details"
   },
   {
    "fieldname": "entry_type_list_section",
@@ -144,24 +156,21 @@
    "options": "Pending\nIn Progress\nCompleted\nDelivered\nCancelled"
   },
   {
-   "fieldname": "inward_stock_entry",
-   "fieldtype": "Link",
-   "label": "Inward Stock Entry",
-   "options": "Stock Entry",
-   "read_only": 1
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Select",
+   "label": "Mode of Payment",
+   "options": "Cash\nUPI\nCard\nBank Transfer"
   },
   {
-   "fieldname": "outward_stock_entry",
-   "fieldtype": "Link",
-   "label": "Outward Stock Entry",
-   "options": "Stock Entry",
-   "read_only": 1
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-24 17:42:20.359017",
+ "modified": "2026-04-29 11:58:27.882603",
  "modified_by": "Administrator",
  "module": "daily_reconciliation",
  "name": "Repair and Service",
